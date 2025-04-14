@@ -1,0 +1,72 @@
+$gray-color: #b0bbd1;
+$checked-color: #0796d3;
+
+.toDoItem {
+  border: 1px dashed #d7dde9;
+  border-radius: 8px;
+  padding: 16px;
+  gap: 16px;
+  width: 386px;
+}
+
+.toDoItem:hover {
+  background-color: #f7f9fd;
+  border: 1px solid #f7f9fd;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexCol {
+  flex-direction: column;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.itemsCenter {
+  align-items: center;
+}
+
+.trashIcon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  color: $gray-color;
+}
+
+.trashIcon:hover {
+  color: #ff4d4d;
+}
+
+.checkBox {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $gray-color;
+  border-radius: 4px;
+}
+
+.activeCheckBox {
+  background-color: #a0dcf6;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #0796d3;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  color: #0796d3;
+  width: 12px;
+}
+
+.todoText {
+  text-decoration: line-through;
+  opacity: 0.54;
+  user-select: none;
+}
