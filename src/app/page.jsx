@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TodoItem from "../../components/TodoItem";
 import styles from "../../styles/global.module.scss";
 import ModalNewTask from "../../components/ModalNewTask";
@@ -13,9 +13,18 @@ export default function Home() {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState(null);
 
-  useEffect(() => {
-    console.log(todos);
-  }, [todos]);
+  const dataRef = useRef(
+    new Date().toLocaleDateString("pt-BR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
+  );
+
+  // useEffect(() => {
+  //   // console.log(todos);
+  // }, [todos]);
 
   return (
     <>
@@ -45,11 +54,14 @@ export default function Home() {
       )}
 
       <nav
-        className={`${styles.flex} ${styles.itemsCenter} ${styles.justifyBetween} ${styles.mx4} ${styles.borderBottom}`}
+        className={`${styles.flex} ${styles.itemsCenter} ${styles.justifyBetween} ${styles.mx4} ${styles.borderBottom} ${styles.nav}`}
       >
         <img src="/logo.png" alt="logo da empresa" />
-        <h1>Bem vindo de volta, Gabryel!</h1>
-        <p>Segunda, 01 de janeiro de 2025</p>
+        <h1 className={styles.oculto}>Bem vindo de volta, Gabryel!</h1>
+        {/* <p>Segunda, 01 de janeiro de 2025</p> */}
+        <p className={`${styles.fontBold} ${styles.oculto}`}>
+          {dataRef.current.toLocaleUpperCase()}
+        </p>
       </nav>
 
       {/* Conteúdo principal */}
