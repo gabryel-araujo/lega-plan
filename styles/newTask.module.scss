@@ -6,11 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
-  padding: 20px; // Adiciona um espaçamento interno
+  padding: 20px;
 }
 
 .modalContent {
@@ -60,6 +60,7 @@
 .input:focus {
   outline: none;
   border-color: #0796d3;
+  font-size: 16px;
 }
 
 .button {
@@ -103,4 +104,13 @@
 
 .gap2 {
   gap: 2rem;
+}
+
+@media (max-width: 639px) {
+  .modalContent {
+    width: 100%;
+  }
+  .main {
+    padding: 1rem;
+  }
 }

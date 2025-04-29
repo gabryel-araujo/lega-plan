@@ -70,3 +70,9 @@ $checked-color: #0796d3;
   opacity: 0.54;
   user-select: none;
 }
+
+@media (max-width: 639px) {
+  .toDoItem {
+    width: 100%;
+  }
+}
